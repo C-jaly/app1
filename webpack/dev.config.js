@@ -1,6 +1,10 @@
 var path = require('path')
+var HtmlwebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-  entry: './src/main.js', // 打包文件
+  entry: [
+    './src/common/main.js', // 打包文件
+    'babel-polyfill'
+  ],
   output: { // 打包出来的文件名称和路径
     /**
      * 解析 __dirname,__filename,process.cwd(),./
@@ -19,10 +23,13 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/, // 忽略node_modules的文件
         options: {
-          plugins: ['transform-runtime'],
           presets: ['es2015']
         }
       },
+      {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader'
+      }
       // {
       //   test: /\.css$/,
       //   use: {
@@ -30,5 +37,8 @@ module.exports = {
       //   }
       // }
     ]
-  }
+  },
+  plugins:[
+    new HtmlwebpackPlugin()
+  ]
 }
