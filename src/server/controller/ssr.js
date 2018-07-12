@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/server';
 import Html from '../helper/html'
 
 module.exports = (req, res, next) => {
+  console.log('开发环境：', global.IS_DEVELOPMENT)
   if (global.IS_DEVELOPMENT) {
     global.webpackIsomorphicTools.refresh()
   }

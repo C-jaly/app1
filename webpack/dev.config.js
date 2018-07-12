@@ -11,6 +11,7 @@ const publicPath = 'http://' + host + ':' + port + '/dist/'
 module.exports = {
   devtool: 'inline-source-map',
   entry: common.entry, // 入口文件
+  mode: 'development',
   output: { // 打包出来的文件名称和路径
     /**
      * 解析 __dirname,__filename,process.cwd(),./
@@ -22,9 +23,9 @@ module.exports = {
     path: path.resolve('./dist'), // 或者 path.resolve(__dirname, '../dist')
     publicPath: publicPath,
     filename: '[name]-[hash:6].js',
-    devServer: {
-      contentBase: './dist'
-    }
+    // devServer: {
+    //   contentBase: './dist'
+    // }
   },
   module: { // 加载器加载规则
     rules: [
