@@ -1,16 +1,18 @@
 /**
  * filename: main.js
  */
-import template from 'handlebars-loader!./numberlist.hbs'
   // 1
-  // console.log('1,2,3,4,5')
-  // module.exports = {name: 1}
+  console.log('1,2,3,4,5')
+  exports.name = 1
+  // => module.exports = {
+  //   name: 1
+  // }
   
   // 2
-  import _ from 'lodash';
-  const numbers = _.map([1,2,3,4,5,6], n => n*n)
-  // document.getElementById("app-container").innerHTML = template({numbers});
-  console.log(template({numbers}))
+  // import _ from 'lodash';
+  // const numbers = _.map([1,2,3,4,5,6], n => n*n)
+  // // document.getElementById("app-container").innerHTML = template({numbers});
+  // console.log({numbers})
 
 
   // console.log('__dirname', __dirname)
