@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 
-const babelrc = fs.readFileSync('./.babelrc')
+const babelrc = fs.readFileSync('./.babelrc') // 读取babelrc配置文件
 let config = null
 
 config = JSON.parse(babelrc)
@@ -10,4 +10,4 @@ config = JSON.parse(babelrc)
 /* use bluebird as default promise */
 require('core-js');
 require('core-js/es6/promise').default = require('bluebird')
-require('babel-register')(config);
+require('babel-register')(config); // babel转义文件

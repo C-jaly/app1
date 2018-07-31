@@ -20,9 +20,9 @@ module.exports = {
      * process.cwd(): 执行node命令的目录名绝对路径 Users/cjl/studyspace/app1
      * path.resolve(./dist) : 执行node命令的目录名 Users/cjl/studyspace/app1/dist
      */
-    path: path.resolve('./dist'), // 或者 path.resolve(__dirname, '../dist')
-    publicPath: publicPath,
-    filename: '[name]-[hash:6].js',
+    path: path.resolve('./dist'), // 或者 path.resolve(__dirname, '../dist') 打包出的文件所在目录
+    publicPath: publicPath, // 打包出的文件可访问的公开目录
+    filename: '[name]-[hash:6].js', // 打包出的文件名，根据入口文件的名称与文件hash出的索引组合
     // devServer: {
     //   contentBase: './dist'
     // }
@@ -30,7 +30,7 @@ module.exports = {
   module: { // 加载器加载规则
     rules: [
       {
-        test: /\.jsx?$/, // js jsx后缀的文件用babel-loader加载器处理
+        test: /\.jsx?$/, // js jsx后缀的文件用babel-loader加载器处理，将es6de语法转换为es5
         loader: 'babel-loader',
         exclude: /node_modules/, // 忽略node_modules的文件
         options: {
@@ -42,12 +42,16 @@ module.exports = {
         loader: 'url-loader?limit=10240'
       },
       {
-        test: /\.css$/,
+        test: /\.css$/, // 使用css-loader style-loader处理.css文件，支持postcss,sass,less...
         use: [
           // 'babel-loader',
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/, // 图片当做URL被引入css或者页面的时候，需要用file-loader进行解析
+        use: [ 'file-loader' ]
       }
     ]
   },
@@ -63,5 +67,16 @@ module.exports = {
       IS_DEVELOPMENT: true,
       ENABLE_DEVTOOLS: true
     }),
-  ]
+  ],
+  resolve: {
+    extensions: ['.json', '.js', '.jsx', '.css', '.scss', '.less'],
+    alias: {
+      config: path.resolve('./config'),
+      image: path.resolve('./src/image'),
+      client: path.resolve('./src/client'),
+      pages: path.resolve('./src/common/pages'),
+      styles: path.resolve('./src/common/style'),
+      controller: path.resolve('./src/server/controller')
+    }
+  }
 }

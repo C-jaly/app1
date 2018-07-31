@@ -2,7 +2,6 @@
   "name": "app1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "concurrently --kill-others \"npm run watch-client\" \"npm run start-server-dev\"",
     "watch-client": "node webpack/webpack-dev-server.js",

@@ -21,10 +21,7 @@ http.createServer(app).listen(8000, '127.0.0.1', (err) => {
   }
   console.info('===> open http://127.0.0.1:8000 in a browser to view app')
 })
-app.get('/', ssr)
+app.get('/*', ssr)
 app.get('/test', function(req, res) {
     res.send('testPage success!!!')
-})
-app.use('/about', function(req, res) {
-  res.end('aboutPage success!!!')
 })
