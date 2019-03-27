@@ -31,10 +31,10 @@ export default class Html extends Component {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-          <title>点我达骑手</title>
+          <title>测试</title>
           { /* <link rel="shortcut icon" href="/favicon.ico" /> */ }
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-          <link rel="dns-prefetch" href="//assets.dianwoda.cn" />
+          {/* <link rel="dns-prefetch" href="//assets.dianwoda.cn" /> */}
           {/* styles (will be present only in production with webpack extract text plugin) */}
           {/* Object.keys(assets.styles).map((style, key) =>
             // eslint-disable-next-line react/no-array-index-key
@@ -61,13 +61,13 @@ export default class Html extends Component {
               dangerouslySetInnerHTML={{ __html: '* {margin:0;padding:0;}' }}
             />
           : null }
-          {cnzzUrl && <script charSet="UTF-8" src={cnzzUrl} />}
-          <style dangerouslySetInnerHTML={{ __html: 'a[title="站长统计"]{display: none}' }} />
         </head>
         <body>
-          <div id="content" dangerouslySetInnerHTML={{ __html: content }} />
-          {process.env.NODE_ENV === 'development' ? <script src="/vendorDll/vendor.dll.js" /> : ''}
-          <script src="//assets.dianwoda.cn/dianwoda-rider/static/raven.min.js" />
+          {/* <div id="content" dangerouslySetInnerHTML={{ __html: content }} /> */}
+          <div id="content" />
+
+          {/* {process.env.NODE_ENV === 'development' ? <script src="/vendorDll/vendor.dll.js" /> : ''} */}
+          {/* <script src="//assets.dianwoda.cn/dianwoda-rider/static/raven.min.js" /> */}
           {
             source.map((s, i) => (
               <script src={assets.javascript[s]} charSet="UTF-8" key={i} />

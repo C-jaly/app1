@@ -13,7 +13,9 @@ import ssr from './controller/ssr'
   // 2.结合HTTP和express
   
 const app = new Express()
-app.use(Express.static(path.join(__dirname, '../common/static')))
+app.use(Express.static(path.join(__dirname, '../../static')))
+console.log(path.join(__dirname, '../../static'))
+
 http.createServer(app).listen(8000, '127.0.0.1', (err) => {
   if (err) {
     console.error(err.stack || err)
@@ -22,6 +24,6 @@ http.createServer(app).listen(8000, '127.0.0.1', (err) => {
   console.info('===> open http://127.0.0.1:8000 in a browser to view app')
 })
 app.get('/*', ssr)
-app.get('/test', function(req, res) {
-    res.send('testPage success!!!')
-})
+// app.get('/test', function(req, res) {
+//   res.send('Hello world')
+// })

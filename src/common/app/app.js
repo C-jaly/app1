@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import About from 'pages/about'
-import { Route } from 'react-router-dom'
+// import { Router } from 'react-router'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        {/* this.props.children */}
-        <h1>大标题</h1>
-      </div>
-    )
-  }
+export default function app() {
+  return (
+    <div>
+      {/* this.props.children */}
+      <h1>大标题</h1>
+    </div>
+  )
+
 }
-export default App
