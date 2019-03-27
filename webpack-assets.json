@@ -1,6 +1,7 @@
 {
   "javascript": {
-    "first": "http://127.0.0.1:8001/dist/first-929abd.js"
+    "first": "http://127.0.0.1:8001/dist/first-b7f1e1.js",
+    "vendor": "http://127.0.0.1:8001/dist/vendor-b7f1e1.js"
   },
   "styles": {},
   "assets": {},

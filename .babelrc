@@ -4,5 +4,5 @@
     "stage-0",
     "es2015"
   ],
-  "plugins":[]
+  "plugins": ["react-hot-loader/babel"]
 }
