@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-// import { Router } from 'react-router'
-
+import { Router, browserHistory } from 'react-router'
+import routes from 'routes/routes.server.js'
 export default function app() {
+  console.log(routes)
   return (
-    <div>
-      {/* this.props.children */}
-      <h1>大标题</h1>
-    </div>
+    <Router history={browserHistory}>
+      {routes}
+    </Router>
   )
 
 }

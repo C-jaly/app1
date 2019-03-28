@@ -1,13 +1,13 @@
 import React from 'React'
-import { Route, IndexRedirect } from 'react-router'
-import { Main, About } from 'pages'
+import { Route, IndexRedirect, IndexLink } from 'react-router'
+import { Start, Main, About } from 'pages'
 
 const routes = (
-  <Route path="/">
-    <IndexRedirect path="container/content2" />
+  <Route path="/" component={Start}>
+    <IndexRedirect to="/container/content2" />
     <Route path="container">
-      <Route path="content1" Component={About}></Route>
-      <Route path="content2" Component={Main}></Route>
+      <Route path="content1" component={About}></Route>
+      <Route path="content2" component={Main}></Route>
     </Route>
   </Route>
 )

@@ -1,7 +1,9 @@
-import { Main } from './main.js'
-import { About } from './about.js'
+import Main from './main.js'
+import About from './about.js'
+import Start from './start'
 
 export {
-    About,
-    Main
+  Start,
+  About,
+  Main
 }
