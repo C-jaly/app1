@@ -76,6 +76,7 @@ module.exports = {
       client: path.resolve('./src/client'),
       app: path.resolve('./src/common/app'),
       pages: path.resolve('./src/common/pages'),
+      routes: path.resolve('./src/common/routes'),
       styles: path.resolve('./src/common/style'),
       controller: path.resolve('./src/server/controller')
     }

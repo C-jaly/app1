@@ -8,6 +8,7 @@ const rootDir = path.resolve(__dirname, '..') // node执行的目录
 global.IS_CLIENT = false;
 global.IS_SERVER = true;
 global.DISABLE_SSR = true;
+console.log('+++++++++process.env.NODE_ENV', process.env.NODE_ENV)
 global.IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 global.ROOTDIR = rootDir
 
