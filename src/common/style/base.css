@@ -1,0 +1,51 @@
+/* 设备像素比 = 设备物理像素/设备独立像素
+设备物理像素跟屏幕材质有关，视网膜屏幕或者非视网膜屏幕
+设备独立像素和屏幕密度有关 */
+
+.bd-1px{
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scale(1);
+  }
+}
+/*底边边框*/
+.bdb-1px{
+  &:before{
+    border-bottom: 1px solid #e5e5e5;
+  }
+}
+/*右边边框*/
+.bdr-1px{
+  &:before{
+    border-right: 1px solid #e5e5e5;
+  }
+}
+/*左边边框*/
+.bdl-1px{
+  &:before{
+    border-left: 1px solid #e5e5e5;
+  }
+}
+/*顶部边框*/
+.bdt-1px{
+  &:before{
+    border-top: 1px solid #e5e5e5;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .bd-1px{
+    :before{
+      transform: scale(0.5);
+      top: -50%;
+      bottom: -50%;
+      left: -50%;
+      right: -50%;
+    }
+  }
+}

@@ -13,11 +13,6 @@ import Helmet from 'react-helmet';
  * by the server.js file.
  */
 export default class Html extends Component {
-  // static propTypes = {
-  //   assets: PropTypes.object,
-  //   component: PropTypes.node,
-  //   store: PropTypes.object,
-  // }
 
   render() {
     const { assets, component, store, source, cnzzUrl } = this.props;
@@ -32,16 +27,7 @@ export default class Html extends Component {
           {head.link.toComponent()}
           {head.script.toComponent()}
           <title>测试</title>
-          { /* <link rel="shortcut icon" href="/favicon.ico" /> */ }
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-          {/* <link rel="dns-prefetch" href="//assets.dianwoda.cn" /> */}
-          {/* styles (will be present only in production with webpack extract text plugin) */}
-          {/* Object.keys(assets.styles).map((style, key) =>
-            // eslint-disable-next-line react/no-array-index-key
-            <link href={assets.styles[style]} key={key} media="screen, projection"
-              rel="stylesheet" type="text/css" charSet="UTF-8"
-            />,
-          ) */}
 
           {
             source.map((s, i) => (
@@ -63,11 +49,9 @@ export default class Html extends Component {
           : null }
         </head>
         <body>
-          {/* <div id="content" dangerouslySetInnerHTML={{ __html: content }} /> */}
           <div id="content" />
 
           {/* {process.env.NODE_ENV === 'development' ? <script src="/vendorDll/vendor.dll.js" /> : ''} */}
-          {/* <script src="//assets.dianwoda.cn/dianwoda-rider/static/raven.min.js" /> */}
           {
             source.map((s, i) => (
               <script src={assets.javascript[s]} charSet="UTF-8" key={i} />

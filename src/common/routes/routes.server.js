@@ -1,5 +1,5 @@
 import React from 'React'
-import { Route, IndexRedirect, IndexLink } from 'react-router'
+import { Route, IndexRedirect } from 'react-router'
 import { Start, Main, About } from 'pages'
 
 const routes = (
