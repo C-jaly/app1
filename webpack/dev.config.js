@@ -44,6 +44,14 @@ module.exports = {
       {
         test: /\.css$/, // 使用css-loader style-loader处理.css文件，支持postcss,sass,less...
         use: [
+          'style-loader',
+          'css-loader?importLoaders=2',
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.less$/, // 使用css-loader style-loader处理.css文件，支持postcss,sass,less...
+        use: [
           // 'babel-loader',
           'style-loader',
           'css-loader'
