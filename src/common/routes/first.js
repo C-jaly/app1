@@ -1,11 +1,11 @@
 import React from 'React'
 import { Route, IndexRedirect } from 'react-router'
-import { Start, Main, About } from 'pages'
+import { Main, About } from '../pages/first'
+import { Start } from '../pages/component/start'
 
 const routes = (
   <Route path="/" component={Start}>
-    <IndexRedirect to="/container/content2" />
-    <Route path="container">
+    <Route path="first">
       <Route path="content1" component={About}></Route>
       <Route path="content2" component={Main}></Route>
     </Route>

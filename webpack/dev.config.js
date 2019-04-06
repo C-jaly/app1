@@ -27,6 +27,18 @@ module.exports = {
     //   contentBase: './dist'
     // }
   },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //     minChunks: Infinity,
+  //     cacheGroups: {
+  //       commons: {
+  //         chunks: "initial",
+  //         minChunks: Infinity,
+  //       }
+  //     }
+  //   },
+  // },
   module: { // 加载器加载规则
     rules: [
       {
@@ -37,10 +49,10 @@ module.exports = {
           presets: ['es2015', 'react', 'stage-0'],
         }
       },
-      {
-        test: webpackIsomorphicToolsPlugin.regular_expression('images'),
-        loader: 'url-loader?limit=10240'
-      },
+      // {
+      //   test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+      //   loader: 'url-loader?limit=10240'
+      // },
       {
         test: /\.css$/, // 使用css-loader style-loader处理.css文件，支持postcss,sass,less...
         use: [
@@ -59,11 +71,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg|gif)$/, // 图片当做URL被引入css或者页面的时候，需要用file-loader进行解析
-        use: [ 'file-loader' ]
+        use: ['file-loader']
       }
     ]
   },
-  plugins:[
+  plugins: [
     new webpack.HotModuleReplacementPlugin(), // 代码热更替插件
     webpackIsomorphicToolsPlugin.development(),
     new webpack.DefinePlugin({
@@ -75,6 +87,11 @@ module.exports = {
       IS_DEVELOPMENT: true,
       ENABLE_DEVTOOLS: true
     }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: Infinity,
+    // }),
+
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx', '.css', '.scss', '.less'],

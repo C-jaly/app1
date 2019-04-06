@@ -1,6 +1,8 @@
 {
   "javascript": {
-    "first": "http://127.0.0.1:8001/dist/first-e8f2c7.js"
+    "common": "http://127.0.0.1:8001/dist/common-a5ad9a.js",
+    "first": "http://127.0.0.1:8001/dist/first-a5ad9a.js",
+    "second": "http://127.0.0.1:8001/dist/second-a5ad9a.js"
   },
   "styles": {},
   "assets": {},
