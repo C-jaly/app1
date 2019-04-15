@@ -49,3 +49,18 @@
     }
   }
 }
+
+.main-color{
+  color: #fe751a;
+}
+.btn{
+  width: 5.4324rem;
+  height: 1rem;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1rem;
+  text-align:center;
+  background:var(--mainColor);
+  border-radius:2.7027rem;
+  margin: 0 auto 0.4054rem;
+}

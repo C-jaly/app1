@@ -1,0 +1,83 @@
+/* 该样式根节点font-size:37px，设计图375 */
+/* css优先级：行内样式>id选择器>类选择器>标签选择器 */
+@import './base';
+:root {
+  --mainColor: #fe751a;
+}
+.Second-flexible{
+  background-color: #fff;
+  .header{
+    text-align: center;
+    padding: 0.4865rem 0px 0.4054rem;
+    border-radius:0.1622rem;
+    box-shadow:0rem 0.1081rem 0.4324rem 0rem rgba(151,156,183,0.2);
+    margin: 0.2973rem 0.4054rem 0.5405rem;
+    .rest-value{
+      font-size:15px;
+      font-weight:400;
+      line-height:0.5676rem;
+      color: #666;
+    }
+    .values{
+      padding: 0.4595rem 0 0.6757rem;
+      span:first-child{
+      font-size:15px;
+      font-weight:400;
+      color:rgba(51,51,51,1);
+      line-height:0.5676rem;
+      }
+      span:last-child{
+        font-size:47px;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        line-height:1.2703rem;
+      }
+    }
+    .desc{
+      font-size:12px;
+      font-weight:400;
+      color:rgba(102,102,102,1);
+      line-height:0.4595rem;
+    }
+  }
+  section{
+    margin: 0.5405rem 0.4054rem;
+    .flex-box{
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 1.6216rem;
+      &::before{
+        content: '';
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        border: 1px solid #e5e5e5;
+        transform: scale(0.5);
+        top: -50%;
+        bottom: -50%;
+        left: -50%;
+        right: -50%;
+      }
+      img{
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 0.6486rem;
+        height: 0.6486rem;
+        margin-right: 0.2703rem;
+      }
+      .flex-desc{
+        font-size: 16px;
+        color: #666;
+      }
+    }
+    .provider{
+      .btn{
+        background-image: linear-gradient(to right, #fba55b, #fa754c)
+      }
+    }
+  }
+}
+

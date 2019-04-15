@@ -33,13 +33,14 @@ export default class About extends Component {
     }
   }
   divClick = () => {
-    import('../component/log')
-      .then((module) => {
-        module.open()
-      })
-      .catch((err) => {
-        console.log('err', err)
-      })
+    // TODO： 动态加载，暂时升级插件，不能用了
+    // import('../component/log')
+    //   .then((module) => {
+    //     module.open()
+    //   })
+    //   .catch((err) => {
+    //     console.log('err', err)
+    //   })
     this.setState({
       inputValue: 100
     })

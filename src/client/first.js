@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import App from 'app/first.js'
 import { Router } from 'react-router'
+import '../../static/flexible/flexible'
 
 render(App(), document.getElementById('content'))
 
