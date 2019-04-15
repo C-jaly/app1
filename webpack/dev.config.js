@@ -9,9 +9,10 @@ const port = Number(config.port) + 1
 const publicPath = 'http://' + host + ':' + port + '/dist/'
 
 module.exports = {
+  context: path.resolve(__dirname, '../'),
   devtool: 'inline-source-map',
-  entry: common.entry, // 入口文件
   mode: 'development',
+  entry: common.entry, // 入口文件
   output: { // 打包出来的文件名称和路径
     /**
      * 解析 __dirname,__filename,process.cwd(),./
@@ -20,25 +21,13 @@ module.exports = {
      * process.cwd(): 执行node命令的目录名绝对路径 Users/cjl/studyspace/app1
      * path.resolve(./dist) : 执行node命令的目录名 Users/cjl/studyspace/app1/dist
      */
-    path: path.resolve('./dist'), // 或者 path.resolve(__dirname, '../dist') 打包出的文件所在目录
+    path: path.resolve(__dirname, '../dist'), // 或者 path.resolve(__dirname, '../dist') 打包出的文件所在目录
     publicPath: publicPath, // 打包出的文件可访问的公开目录
     filename: '[name]-[hash:6].js', // 打包出的文件名，根据入口文件的名称与文件hash出的索引组合
     // devServer: {
     //   contentBase: './dist'
     // }
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     minChunks: Infinity,
-  //     cacheGroups: {
-  //       commons: {
-  //         chunks: "initial",
-  //         minChunks: Infinity,
-  //       }
-  //     }
-  //   },
-  // },
   module: { // 加载器加载规则
     rules: [
       {
@@ -91,7 +80,6 @@ module.exports = {
     //   name: 'vendor',
     //   minChunks: Infinity,
     // }),
-
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx', '.css', '.scss', '.less'],
@@ -103,6 +91,7 @@ module.exports = {
       pages: path.resolve('./src/common/pages'),
       routes: path.resolve('./src/common/routes'),
       styles: path.resolve('./src/common/style'),
+      util: path.resolve('./src/common/util'),
       controller: path.resolve('./src/server/controller')
     }
   }

@@ -17,10 +17,10 @@ module.exports = (req, res, next) => {
     } else if (renderProps) {
       console.log('assets', global.webpackIsomorphicTools.assets())
       let source = null
-      if (/^\first\//.test(req.path)) {
-        source = ['vendor', 'first', 'vendorDll']
-      } else if (/^\second\//.test(req.path)) {
-        source = ['vendor', 'second', 'vendorDll']
+      if (/^\/first\//.test(req.path)) {
+        source = ['vendor', 'first', 'update']
+      } else if (/^\/second/.test(req.path)) {
+        source = ['vendor', 'second', 'update']
       }
       res.send(`<!doctype html>
         ${ReactDOM.renderToString(

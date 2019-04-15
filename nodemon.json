@@ -1,16 +1,21 @@
 {
+  "env": {
+    "NODE_ENV": "development"
+  },
   "restartable": "rs",
   "ignore": [
     ".git",
     ".svn",
     "node_modules/**/node_modules",
-    "webpack-assets.json"
+    "webpack-assets.json",
+    "src/common/",
+    "src/client/"
   ],
   "verbose": true,
   "execMap": {
     "js": "node --harmony"
   },
-  "watch": ["/src/server/*"],
+  "watch": ["/src/server/"],
   "env": {
     "NODE_ENV": "development"
   },

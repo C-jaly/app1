@@ -8,10 +8,10 @@ const webpackCommonConfig = {
   entry: {
     first: path.join(__dirname, '../src/client/first.js'),
     second: path.join(__dirname, '../src/client/second.js'),
-    common: ['react', 'react-router', 'react-dom', 'mobx', 'mobx-react', 'lodash']
+    // vendor: ['react', 'react-dom', 'mobx', 'mobx-react', 'react-router', 'lodash']
   }
 }
 if (env === 'development') {
-  webpackCommonConfig.entry.vendor = [hotReload, 'react-hot-loader/patch']
+  webpackCommonConfig.entry.update = [hotReload, 'react-hot-loader/patch']
 }
 module.exports = webpackCommonConfig

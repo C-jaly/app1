@@ -5,6 +5,7 @@
     "es2015"
   ],
   "plugins": [
+    "syntax-dynamic-import",
     "react-hot-loader/babel",
     "transform-class-properties",
     [

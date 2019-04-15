@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom/server';
-import serialize from 'serialize-javascript';
 import Helmet from 'react-helmet';
 /* eslint react/no-danger: 0 */
 /**
@@ -28,7 +27,6 @@ export default class Html extends Component {
           {head.script.toComponent()}
           <title>测试</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-
           {
             source.map((s, i) => (
               <link href={assets.styles[s]} media="screen, projection"

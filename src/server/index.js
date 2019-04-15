@@ -4,6 +4,7 @@ import Express from 'express'
 import path from 'path'
 import ssr from './controller/ssr'
 import bodyParser from 'body-parser'
+import { port, host } from '../../config/index.js'
 
 // 1.只用HTTP模块的写法
 // http.createServer((req, res) => {
@@ -18,12 +19,12 @@ app.use(Express.static(path.join(__dirname, '../../static')))
 console.log(path.join(__dirname, '../../static'))
 app.use(bodyParser.urlencoded({ extended: true, limit: '4mb' }));
 app.use(bodyParser.json())
-http.createServer(app).listen(8000, '127.0.0.1', (err) => {
+http.createServer(app).listen(port, host, (err) => {
   if (err) {
     console.error(err.stack || err)
     process.exit(0)
   }
-  console.info('===> open http://127.0.0.1:8000 in a browser to view app')
+  console.info(`===> open http://${host}:${port} in a browser to view app`)
 })
 app.get('/*', ssr)
 app.post('/test', function(req, res) {
