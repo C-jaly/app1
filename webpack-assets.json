@@ -1,12 +1,14 @@
 {
   "javascript": {
-    "common": "http://127.0.0.1:8001/dist/common-a5ad9a.js",
-    "first": "http://127.0.0.1:8001/dist/first-a5ad9a.js",
-    "second": "http://127.0.0.1:8001/dist/second-a5ad9a.js"
+    "first": "http://192.168.0.102:8001/dist/first-df5432.js",
+    "second": "http://192.168.0.102:8001/dist/second-df5432.js",
+    "update": "http://192.168.0.102:8001/dist/update-df5432.js"
   },
   "styles": {},
-  "assets": {},
+  "assets": {
+    "./src/image/icon-detail.png": "http://192.168.0.102:8001/dist/b6b40f4af32d931f3db6b05d7660f51c.png"
+  },
   "webpack": {
-    "version": "4.5.0"
+    "version": "4.30.0"
   }
 }
